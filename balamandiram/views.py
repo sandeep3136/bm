@@ -6,7 +6,7 @@ def home(request):
     return render(request, 'balamandiram/home.html')
 
 def gallery(request):
-    return render(request, 'balamandiram/gallery.html', {'posts': Gallery.objects.all()})
+    return render(request, 'balamandiram/gallery.html', {'posts': Gallery.objects.all().order_by('-id')})
 
 def library(request):
     return render(request, 'balamandiram/library.html')
